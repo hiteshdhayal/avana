@@ -10,6 +10,12 @@ import path from "node:path";
  * persistence, not just that a success message appeared.
  */
 
+// These tests share one file on disk (the real local-lead fallback, not a
+// mock) and each resets it in beforeEach, so they cannot run concurrently
+// with each other — under the suite's default fullyParallel, one test's
+// reset can race another's write to the same file. Serialize this file only.
+test.describe.configure({ mode: "serial" });
+
 const LEAD_FILE = path.join(process.cwd(), "data", "leads.local.jsonl");
 
 function leadLines(): string[] {

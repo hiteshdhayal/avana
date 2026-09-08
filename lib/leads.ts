@@ -132,15 +132,41 @@ async function writeToSheet(lead: LeadRecord): Promise<PersistResult["sheet"]> {
   }
 }
 
+/**
+ * Vercel's function filesystem — like most serverless platforms — is
+ * read-only outside `/tmp`, and `/tmp` does not survive between invocations.
+ * So this can't durably persist anything in production; the best it can do
+ * there is put the lead somewhere an operator can still find it. Rather than
+ * branch on `process.env.VERCEL`, the disk write is simply attempted and,
+ * if it fails for any reason (read-only fs, disk full, permissions), the
+ * lead is logged instead — the same fallback path handles a real serverless
+ * deploy and any other misconfiguration uniformly.
+ */
 async function appendLocalFallback(lead: LeadRecord): Promise<void> {
   const dir = path.join(process.cwd(), "data");
   const file = path.join(dir, "leads.local.jsonl");
-  await mkdir(dir, { recursive: true });
-  await appendFile(file, `${JSON.stringify(lead)}\n`, "utf8");
-  console.warn(
-    `[avana:leads] no email or sheet sink configured — wrote to ${file}. ` +
-      "This is a development fallback only; configure real sinks before launch.",
-  );
+
+  try {
+    await mkdir(dir, { recursive: true });
+    await appendFile(file, `${JSON.stringify(lead)}\n`, "utf8");
+    console.warn(
+      `[avana:leads] no email or sheet sink configured — wrote to ${file}. ` +
+        "This is a development fallback only; configure real sinks before launch.",
+    );
+  } catch (error) {
+    // Do not let a read-only filesystem turn "no sink configured yet" into a
+    // failed submission for the visitor — log the full lead so it is at
+    // least recoverable from the platform's function logs.
+    console.error(
+      "[avana:leads] no email or sheet sink configured, and the local " +
+        "fallback file could not be written (expected on a read-only " +
+        "filesystem such as Vercel's). Configure RESEND_API_KEY and/or " +
+        "GOOGLE_SHEETS_ID before launch — until then, leads are only " +
+        "recoverable here, in the function logs:",
+      error,
+      JSON.stringify(lead),
+    );
+  }
 }
 
 export async function persistLead(lead: LeadRecord): Promise<PersistResult> {

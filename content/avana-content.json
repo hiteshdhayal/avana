@@ -1,0 +1,846 @@
+{
+  "$schema": "./avana-content.schema.json",
+  "_readme": "Content seed for the Avana Enclave 18 landing page. Every field with a sibling *Verified: false, or a value of '[VERIFY]', must NOT be rendered as a public claim until confirmed by the client. See Section 3 and Section 9 of AVANA-ENCLAVE-18-BUILD-SPEC.md.",
+  "project": {
+    "name": "Avana Enclave 18",
+    "developer": "Batra & Sankhe Buildcon",
+    "developerLegalName": "Batra and Sons Infra Realty Developers LLP",
+    "developerTagline": "we Build Dreams!!",
+    "units": 18,
+    "landAcres": 2,
+    "landGhunta": 84,
+    "configuration": "Ground + first floor + terrace",
+    "bedrooms": "4 BHK",
+    "bedroomsVerified": false,
+    "plotSqft": 3500,
+    "builtUpSqft": 2500,
+    "carpetSqft": 1950,
+    "priceFrom": 16000000,
+    "priceFromDisplay": "₹1.60 Cr",
+    "possessionMonths": 9,
+    "roofStyle": "Sloping white-and-grey roofs"
+  },
+  "rera": {
+    "registrationNumber": "[VERIFY]",
+    "qrSrc": "/media/maharera-qr.png",
+    "authorityUrl": "https://maharera.maharashtra.gov.in",
+    "verified": false,
+    "_note": "Order 46C/2025: number + authority URL + QR must sit in the top-right quadrant, at a font size >= the largest contact-detail type, high contrast, QR at true aspect ratio. Until this is verified, do not publish prices or plan tables."
+  },
+  "location": {
+    "addressLine": "Karjat Shindhol, Karjat Valley",
+    "district": "Raigad",
+    "state": "Maharashtra",
+    "pincode": "410201",
+    "range": "Sahyadri",
+    "geo": {
+      "lat": null,
+      "lng": null,
+      "verified": false
+    },
+    "mapPinLabel": "Crown Valley Residency",
+    "mapPinVerified": false,
+    "headline": "Karjat, where the plain runs out",
+    "body": "The site sits on a slope above Karjat Shindhol, in the Sahyadri foothills of Raigad. Waterfalls through the monsoon, the valley open to the west, and Karjat town's market and temple a few minutes down the road.",
+    "orientationVerified": false,
+    "connectivity": [
+      {
+        "to": "Navi Mumbai International Airport",
+        "minutes": 95,
+        "verified": true
+      },
+      {
+        "to": "Karjat railway station",
+        "minutes": null,
+        "verified": false
+      },
+      {
+        "to": "Mumbai",
+        "minutes": null,
+        "verified": false
+      },
+      {
+        "to": "Pune",
+        "minutes": null,
+        "verified": false
+      },
+      {
+        "to": "Lonavala",
+        "minutes": null,
+        "verified": false
+      }
+    ]
+  },
+  "hero": {
+    "h1": "Eighteen villas, one hillside in Karjat",
+    "lead": "Private pools, 3,500 sq ft plots and the Sahyadris on three sides — ninety-five minutes from the new airport.",
+    "primaryCta": "Book a site visit",
+    "secondaryCta": "See the master plan",
+    "fieldNotes": [
+      {
+        "label": "Plot",
+        "value": "3,500 sq ft"
+      },
+      {
+        "label": "Built-up",
+        "value": "2,500 sq ft"
+      },
+      {
+        "label": "Configuration",
+        "value": "G + 1 + terrace"
+      },
+      {
+        "label": "From",
+        "value": "₹1.60 Cr"
+      }
+    ],
+    "poster": "/media/valley-day.avif",
+    "video": null
+  },
+  "measureBand": [
+    {
+      "value": "18",
+      "label": "villas"
+    },
+    {
+      "value": "2",
+      "label": "acres"
+    },
+    {
+      "value": "3,500",
+      "label": "sq ft plot"
+    },
+    {
+      "value": "2,500",
+      "label": "sq ft built-up"
+    },
+    {
+      "value": "G + 1",
+      "label": "plus terrace"
+    },
+    {
+      "value": "1",
+      "label": "private pool each"
+    },
+    {
+      "value": "95",
+      "label": "min from NMIA"
+    },
+    {
+      "value": "₹1.60 Cr",
+      "label": "onwards"
+    }
+  ],
+  "masterPlan": {
+    "headline": "Eighteen plots, three terraces",
+    "layoutStatus": "schematic",
+    "caption": "Indicative layout. Final plot boundaries as per the sanctioned plan.",
+    "availability": {
+      "source": "placeholder",
+      "verified": false,
+      "_note": "Do not display counts until this is wired to something sales actually updates."
+    },
+    "viewBox": "0 0 1200 780",
+    "plots": [
+      {
+        "id": "P01",
+        "number": 1,
+        "terrace": 1,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 110 150.0 L 248 132.0 L 248 264.0 L 110 282.0 Z",
+        "labelXY": [
+          179,
+          207
+        ]
+      },
+      {
+        "id": "P02",
+        "number": 2,
+        "terrace": 1,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 264 143.7 L 402 125.69999999999999 L 402 257.7 L 264 275.7 Z",
+        "labelXY": [
+          333,
+          201
+        ]
+      },
+      {
+        "id": "P03",
+        "number": 3,
+        "terrace": 1,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 418 137.4 L 556 119.4 L 556 251.4 L 418 269.4 Z",
+        "labelXY": [
+          487,
+          194
+        ]
+      },
+      {
+        "id": "P04",
+        "number": 4,
+        "terrace": 1,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 572 131.1 L 710 113.1 L 710 245.1 L 572 263.1 Z",
+        "labelXY": [
+          641,
+          188
+        ]
+      },
+      {
+        "id": "P05",
+        "number": 5,
+        "terrace": 1,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 726 124.8 L 864 106.8 L 864 238.8 L 726 256.8 Z",
+        "labelXY": [
+          795,
+          182
+        ]
+      },
+      {
+        "id": "P06",
+        "number": 6,
+        "terrace": 1,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 880 118.5 L 1018 100.5 L 1018 232.5 L 880 250.5 Z",
+        "labelXY": [
+          949,
+          176
+        ]
+      },
+      {
+        "id": "P07",
+        "number": 7,
+        "terrace": 2,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 150 350.0 L 288 334.0 L 288 466.0 L 150 482.0 Z",
+        "labelXY": [
+          219,
+          408
+        ]
+      },
+      {
+        "id": "P08",
+        "number": 8,
+        "terrace": 2,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 304 344.4 L 442 328.4 L 442 460.4 L 304 476.4 Z",
+        "labelXY": [
+          373,
+          402
+        ]
+      },
+      {
+        "id": "P09",
+        "number": 9,
+        "terrace": 2,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 458 338.8 L 596 322.8 L 596 454.8 L 458 470.8 Z",
+        "labelXY": [
+          527,
+          397
+        ]
+      },
+      {
+        "id": "P10",
+        "number": 10,
+        "terrace": 2,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 612 333.2 L 750 317.2 L 750 449.2 L 612 465.2 Z",
+        "labelXY": [
+          681,
+          391
+        ]
+      },
+      {
+        "id": "P11",
+        "number": 11,
+        "terrace": 2,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 766 327.6 L 904 311.6 L 904 443.6 L 766 459.6 Z",
+        "labelXY": [
+          835,
+          386
+        ]
+      },
+      {
+        "id": "P12",
+        "number": 12,
+        "terrace": 2,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 920 322.0 L 1058 306.0 L 1058 438.0 L 920 454.0 Z",
+        "labelXY": [
+          989,
+          380
+        ]
+      },
+      {
+        "id": "P13",
+        "number": 13,
+        "terrace": 3,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 195 550.0 L 333 536.0 L 333 668.0 L 195 682.0 Z",
+        "labelXY": [
+          264,
+          609
+        ]
+      },
+      {
+        "id": "P14",
+        "number": 14,
+        "terrace": 3,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 349 545.1 L 487 531.1 L 487 663.1 L 349 677.1 Z",
+        "labelXY": [
+          418,
+          604
+        ]
+      },
+      {
+        "id": "P15",
+        "number": 15,
+        "terrace": 3,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 503 540.2 L 641 526.2 L 641 658.2 L 503 672.2 Z",
+        "labelXY": [
+          572,
+          599
+        ]
+      },
+      {
+        "id": "P16",
+        "number": 16,
+        "terrace": 3,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 657 535.3 L 795 521.3 L 795 653.3 L 657 667.3 Z",
+        "labelXY": [
+          726,
+          594
+        ]
+      },
+      {
+        "id": "P17",
+        "number": 17,
+        "terrace": 3,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 811 530.4 L 949 516.4 L 949 648.4 L 811 662.4 Z",
+        "labelXY": [
+          880,
+          589
+        ]
+      },
+      {
+        "id": "P18",
+        "number": 18,
+        "terrace": 3,
+        "areaSqft": 3500,
+        "pool": null,
+        "facing": null,
+        "facingVerified": false,
+        "status": "available",
+        "path": "M 965 525.5 L 1103 511.5 L 1103 643.5 L 965 657.5 Z",
+        "labelXY": [
+          1034,
+          584
+        ]
+      }
+    ]
+  },
+  "villa": {
+    "headline": "Two and a half thousand square feet, over three levels",
+    "body": "[VERIFY] Room distribution across floors — confirm against the approved plans before publishing.",
+    "spec": [
+      {
+        "label": "Plot area",
+        "value": "3,500 sq ft",
+        "verified": true
+      },
+      {
+        "label": "Built-up area",
+        "value": "2,500 sq ft",
+        "verified": true
+      },
+      {
+        "label": "Carpet area",
+        "value": "1,950 sq ft",
+        "verified": true
+      },
+      {
+        "label": "Configuration",
+        "value": "Ground + first floor + terrace",
+        "verified": true
+      },
+      {
+        "label": "Bedrooms",
+        "value": "4 BHK",
+        "verified": false
+      },
+      {
+        "label": "Private pool",
+        "value": "Choose from three",
+        "verified": true
+      },
+      {
+        "label": "Parking",
+        "value": "Dedicated, in-plot",
+        "verified": true
+      },
+      {
+        "label": "Possession",
+        "value": "9 months from booking",
+        "verified": true
+      },
+      {
+        "label": "Price",
+        "value": "₹1.60 Cr onwards",
+        "verified": true
+      }
+    ],
+    "floorPlans": [
+      {
+        "level": "Ground",
+        "src": null,
+        "available": false
+      },
+      {
+        "level": "First",
+        "src": null,
+        "available": false
+      },
+      {
+        "level": "Terrace",
+        "src": null,
+        "available": false
+      }
+    ]
+  },
+  "pools": {
+    "headline": "Choose your pool",
+    "caption": "Pool sizes are as offered at booking. Positioning within the plot varies by terrace level.",
+    "captionVerified": false,
+    "options": [
+      {
+        "id": "A",
+        "name": "Standard family pool",
+        "ft": [
+          12,
+          12
+        ],
+        "m": [
+          3.7,
+          3.7
+        ],
+        "render": "/media/pool-a.avif"
+      },
+      {
+        "id": "B",
+        "name": "Premium lap pool",
+        "ft": [
+          8,
+          23
+        ],
+        "m": [
+          2.4,
+          7.0
+        ],
+        "render": "/media/pool-b.avif"
+      },
+      {
+        "id": "C",
+        "name": "Luxury pool with jacuzzi",
+        "ft": [
+          10,
+          20
+        ],
+        "m": [
+          3.0,
+          6.1
+        ],
+        "render": "/media/pool-c.avif"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Designer elevation",
+      "body": "Premium architectural facade with bespoke designer finishes, crafted to reflect luxury living and distinguished curb appeal.",
+      "span": 7,
+      "image": "/media/elevation.avif"
+    },
+    {
+      "title": "Master suite bathtub",
+      "body": "A freestanding bathtub with designer CP fittings in the master suite.",
+      "span": 5,
+      "image": null
+    },
+    {
+      "title": "Landscaped garden",
+      "body": "Manicured planting, an outdoor leisure deck and a private gazebo.",
+      "span": 5,
+      "image": null
+    },
+    {
+      "title": "Pool options",
+      "body": "Standard family pool, premium lap pool or a luxury pool with jacuzzi — chosen at booking.",
+      "span": 12,
+      "image": "/media/pool-wide.avif",
+      "href": "#pools"
+    }
+  ],
+  "amenities": {
+    "headline": "What the eighteen share",
+    "lead": "A clubhouse at the centre of the enclave, a shop you can walk to, and two acres of planting between the houses.",
+    "items": [
+      {
+        "name": "Clubhouse",
+        "line": "Lounge, indoor games and a multipurpose hall for gatherings."
+      },
+      {
+        "name": "Clubhouse pool",
+        "line": "A resort-style pool for the community, beyond your own."
+      },
+      {
+        "name": "Restaurant",
+        "line": "On-site dining for weekends and guests."
+      },
+      {
+        "name": "Organic supermarket",
+        "line": "Everyday essentials without leaving the gate."
+      },
+      {
+        "name": "Kids' play area",
+        "line": "A dedicated, enclosed play zone."
+      },
+      {
+        "name": "Meditation zones",
+        "line": "Quiet sit-outs at the edge of the slope."
+      },
+      {
+        "name": "Water bodies",
+        "line": "Landscaped water features through the enclave."
+      },
+      {
+        "name": "Mango and Ashoka planting",
+        "line": "Shade trees chosen for the terrain."
+      },
+      {
+        "name": "Paved internal roads",
+        "line": "Black bitumen, graded for the slope."
+      },
+      {
+        "name": "24/7 security",
+        "line": "Perimeter wall, gates and manned entry."
+      }
+    ],
+    "image": "/media/clubhouse-dusk.avif"
+  },
+  "evening": {
+    "passage": "After sunset the lamps come on along the pathways, and eighteen houses read as one small town on the hillside.",
+    "image": "/media/aerial-dusk.avif"
+  },
+  "plans": {
+    "headline": "Three ways in",
+    "lead": "Buy a villa at soft-launch pricing, buy one and let us run it as a rental, or invest without owning a villa at all.",
+    "items": [
+      {
+        "id": "A",
+        "name": "Assured return",
+        "oneLiner": "Invest without buying a villa.",
+        "enabled": false,
+        "gate": "NEXT_PUBLIC_SHOW_PLAN_A",
+        "_note": "Do not enable without written legal sign-off. See spec Section 3.4.",
+        "rows": [
+          {
+            "label": "Entry",
+            "value": "₹10 L / ₹25 L / ₹30 L"
+          },
+          {
+            "label": "Term",
+            "value": "1 or 2 years"
+          },
+          {
+            "label": "Return",
+            "value": "18% p.a.; 36% over two years"
+          },
+          {
+            "label": "Suits",
+            "value": "Fixed-return investors"
+          }
+        ],
+        "payoutTable": [
+          {
+            "principal": 1000000,
+            "years": 1,
+            "payout": 1180000,
+            "verified": true
+          },
+          {
+            "principal": 2500000,
+            "years": 1,
+            "payout": 2950000,
+            "verified": true
+          },
+          {
+            "principal": 3000000,
+            "years": 1,
+            "payout": 3540000,
+            "verified": true
+          },
+          {
+            "principal": 1000000,
+            "years": 2,
+            "payout": null,
+            "verified": false
+          },
+          {
+            "principal": 2500000,
+            "years": 2,
+            "payout": null,
+            "verified": false
+          },
+          {
+            "principal": 3000000,
+            "years": 2,
+            "payout": null,
+            "verified": false
+          }
+        ],
+        "cta": "Talk to us about Plan A"
+      },
+      {
+        "id": "B",
+        "name": "Soft launch allotment",
+        "oneLiner": "Secure a villa at pre-launch pricing.",
+        "enabled": true,
+        "rows": [
+          {
+            "label": "Entry",
+            "value": "30% at booking"
+          },
+          {
+            "label": "Term",
+            "value": "9 months to possession"
+          },
+          {
+            "label": "Return",
+            "value": "—"
+          },
+          {
+            "label": "Suits",
+            "value": "Buyers wanting the launch price"
+          }
+        ],
+        "cta": "Check available plots"
+      },
+      {
+        "id": "C",
+        "name": "Ownership programme",
+        "oneLiner": "Own it, and earn from it.",
+        "enabled": true,
+        "rows": [
+          {
+            "label": "Entry",
+            "value": "Villa price less 15%"
+          },
+          {
+            "label": "Term",
+            "value": "Ongoing"
+          },
+          {
+            "label": "Return",
+            "value": "6–7% p.a. indicative rental yield"
+          },
+          {
+            "label": "Suits",
+            "value": "Buyers wanting use and income"
+          }
+        ],
+        "qualifier": "Rental income is indicative and not guaranteed; it depends on occupancy.",
+        "cta": "Talk to us about Plan C"
+      }
+    ],
+    "advantages": [
+      "15% upfront discount",
+      "6–7% indicative rental yield",
+      "Long-term capital appreciation",
+      "Use it yourself, let it when you don't"
+    ]
+  },
+  "payment": {
+    "headline": "Booking to keys",
+    "steps": [
+      {
+        "n": 1,
+        "title": "Book",
+        "body": "30% down at booking secures your plot and villa at soft-launch pricing."
+      },
+      {
+        "n": 2,
+        "title": "Build",
+        "body": "No further payment until the structure is complete."
+      },
+      {
+        "n": 3,
+        "title": "Balance",
+        "body": "The remainder is paid against construction milestones."
+      },
+      {
+        "n": 4,
+        "title": "Possession",
+        "body": "Handover within nine months of booking."
+      }
+    ],
+    "caption": "Payment terms are as set out in the allotment letter and agreement for sale. Figures here are indicative."
+  },
+  "developer": {
+    "headline": "Built by Batra & Sankhe Buildcon",
+    "body": "Batra & Sankhe Buildcon — registered as Batra and Sons Infra Realty Developers LLP — builds residential projects across the Mumbai region. Avana Enclave 18 is its flagship hillside development.",
+    "principles": [
+      {
+        "name": "Clear agreements",
+        "line": "Terms set out in writing from day one."
+      },
+      {
+        "name": "Aligned responsibilities",
+        "line": "Defined ownership of every commitment."
+      },
+      {
+        "name": "Shared trust",
+        "line": "Revenue upfront, and long-term accountability."
+      }
+    ],
+    "trustFacts": {
+      "yearsActive": null,
+      "projectsDelivered": null,
+      "unitsHandedOver": null,
+      "llpin": null,
+      "registeredOffice": null,
+      "verified": false
+    },
+    "website": "https://batralifespace.com"
+  },
+  "enquire": {
+    "headline": "Come and see the slope",
+    "lead": "We'll arrange a site visit, walk you through the plots that are still open, and answer the money questions properly. Weekends included.",
+    "consent": "I agree that Batra & Sankhe Buildcon may contact me by phone, WhatsApp and email about Avana Enclave 18, and may store my details for that purpose.",
+    "successTitle": "Thanks — we've got it.",
+    "successBody": "Someone from the sales team will call you within a business day.",
+    "failure": "That didn't send. Call us, or message us on WhatsApp."
+  },
+  "contact": {
+    "phoneE164": "+917715039883",
+    "phoneDisplay": "+91 77150 39883",
+    "phoneVerified": false,
+    "_phoneNote": "Deck prints '+9191-7715039883', which has one digit group too many. Confirm before shipping tel: and wa.me links.",
+    "whatsapp": "917715039883",
+    "email": "info@batralifespace.com",
+    "emailVerified": false,
+    "projectSite": "https://avanaenclave18.com",
+    "developerSite": "https://batralifespace.com",
+    "address": "Karjat Shindhol, Karjat Valley, Raigad, Maharashtra 410201"
+  },
+  "faq": [
+    {
+      "q": "Where exactly is Avana Enclave 18?",
+      "a": "Karjat Shindhol, Karjat valley, Raigad district, Maharashtra 410201."
+    },
+    {
+      "q": "How far is it from the airport?",
+      "a": "About 95 minutes by road from Navi Mumbai International Airport."
+    },
+    {
+      "q": "What does a villa cost?",
+      "a": "From ₹1.60 Cr, exclusive of statutory charges."
+    },
+    {
+      "q": "How big is each villa?",
+      "a": "A 3,500 sq ft plot with 2,500 sq ft built-up and 1,950 sq ft carpet, over ground, first floor and terrace."
+    },
+    {
+      "q": "Does every villa get a pool?",
+      "a": "Yes, with three sizes to choose from at booking."
+    },
+    {
+      "q": "When is possession?",
+      "a": "Within nine months of booking."
+    },
+    {
+      "q": "Can I let the villa out?",
+      "a": "Yes, through the managed rental programme under Plan C."
+    },
+    {
+      "q": "Is the project RERA registered?",
+      "a": "[VERIFY]"
+    }
+  ],
+  "disclosure": "All images are artist's impressions and do not represent the final product. Plot layouts, areas, specifications, amenities and payment terms are indicative and subject to change and to the sanctioned plans and the agreement for sale. Nothing on this page is an offer or a contract. Prices are exclusive of GST, stamp duty, registration and other statutory charges. Investment returns described here are as per the terms of the relevant agreement, are subject to its conditions, and are not a guarantee of future performance. Project registered with MahaRERA under registration number {REG_NO}; details at https://maharera.maharashtra.gov.in.",
+  "disclosureApproved": false
+}

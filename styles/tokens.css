@@ -1,0 +1,74 @@
+/* ---------------------------------------------------------------------------
+   Avana Enclave 18 — design tokens.
+   Source of truth: AVANA-ENCLAVE-18-BUILD-SPEC.md sections 4.2, 4.3, 4.4, 4.6.
+   Values here are the spec's values verbatim. Do not substitute a palette,
+   typeface or motion default without changing the spec first.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* 4.2 Colour ------------------------------------------------------------ */
+  --ink: #0c1e26; /* dusk in the valley. Large fields, display type on mist. */
+  --ink-80: #35474f; /* body text on mist */
+  --ink-55: #6c7b81; /* captions, disabled */
+  --mist: #edefe9; /* page background. Cool green-grey, NOT cream. */
+  --mist-hi: #f6f7f3; /* raised surfaces, form fields */
+  --stone: #bfc5ba; /* contour lines, hairline rules, plot outlines */
+  --terrace: #35543f; /* deep valley green. Map fills, second surface. */
+  --amber: #e39b2e; /* THE accent. Primary CTA, available plots, current state. */
+  --amber-ink: #4a2f06; /* text on amber */
+  --brass: #a9884f; /* developer signature only */
+  --alert: #a3402f; /* form errors */
+
+  /* 4.3 Type scale -------------------------------------------------------- */
+  --step--1: 0.8125rem; /* caption 13px / 1.45 */
+  --step-0: 1.0625rem; /* body 17px / 1.65 */
+  --step-1: 1.25rem; /* lead 20px / 1.55 */
+  --step-2: clamp(1.5rem, 1.2vw + 1.2rem, 1.75rem);
+  --step-3: clamp(2rem, 2.4vw + 1.3rem, 3.25rem); /* section head */
+  --step-4: clamp(2.75rem, 4.5vw + 1rem, 5rem); /* sub-display */
+  --step-5: clamp(3.25rem, 8.5vw, 8rem); /* hero */
+
+  /* 4.4 Space, grid, shape ------------------------------------------------ */
+  --space: 4px; /* 4 8 12 16 24 32 48 64 96 128 160 */
+  --container: 1440px;
+  --gutter-desk: 72px;
+  --gutter-tab: 40px;
+  --gutter-mob: 20px;
+  --col: 12;
+  --col-gap: 24px;
+  --radius-none: 0; /* rules, plot shapes, the map */
+  --radius-s: 2px; /* inputs, chips */
+  --radius-m: 4px; /* buttons */
+  --radius-img: 3px; /* images — nearly square, architectural */
+
+  /* The one section-rhythm rule. Applied by <Section> only (spec 4.4). */
+  --section-pad: 72px;
+
+  /* The contour rail reserves this much of the viewport at >= 1200px. */
+  --rail-w: 96px;
+
+  /* Sticky header height, used for scroll-margin on every anchor. */
+  --header-h: 64px;
+
+  /* 4.6 Motion ------------------------------------------------------------ */
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 640ms;
+  --dur-cinematic: 1200ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-pad: 96px;
+    --header-h: 88px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --section-pad: 128px;
+  }
+}

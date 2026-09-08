@@ -211,14 +211,21 @@ That gives one memorable, subject-specific device that also does real work — i
   --mist-hi:  #F6F7F3;  /* raised surfaces, form fields */
   --stone:    #BFC5BA;  /* contour lines, hairline rules, plot outlines */
   --terrace:  #35543F;  /* deep valley green. Map fills, second surface, secondary buttons. */
-  --amber:    #E39B2E;  /* THE accent. Primary CTA, available plots, current state. Nothing else. */
+  --amber:    #E39B2E;  /* THE accent for calls to action, availability and current state. */
   --amber-ink:#4A2F06;  /* text on amber */
   --brass:    #A9884F;  /* developer signature only: wordmark rule, credibility band */
   --alert:    #A3402F;  /* form errors */
+  --sage:     #6E8F73;  /* quiet structural accent, added [2026 redesign]: icon strokes and
+                            section-transition marks only. Never a CTA, never competes with
+                            amber's job above. See "amended" note below. */
 }
 ```
 
-Contrast: `--ink` on `--mist` = 13.9:1. `--ink-55` on `--mist` is captions-only at ≥ 14px (4.6:1). `--amber-ink` on `--amber` = 7.4:1. Never put `--amber` text on `--mist` below 18px.
+Contrast: `--ink` on `--mist` = 13.9:1. `--ink-55` on `--mist` is captions-only at ≥ 14px (4.6:1). `--amber-ink` on `--amber` = 7.4:1. Never put `--amber` text on `--mist` below 18px. `--sage` on `--mist` ≈ 3.1:1 — clears the 3:1 WCAG 1.4.11 floor for non-text UI marks, but `--sage` is never used to carry text, only strokes, so it must never be pressed into a text role that would need the higher text-contrast bars above.
+
+**Amended, [2026 redesign]:** the project brief originally read "One accent only" / "Do not use a second accent colour. Amber is the only one." (Section 16). That rule is relaxed to admit exactly one narrowly-scoped second accent, `--sage`, for quiet structural marks that are not calls to action. Amber's exclusivity as *the* action/state colour is unchanged — `--sage` may never sit on a button, a plot's availability fill, or anything else amber already owns.
+
+`--sage` is not yet consumed by any component. Its intended first use is a compact icon-labeled facts strip (echoing the reference site's "3 BED · plot area · built-up area · possession" pattern) surfacing a handful of already-verified `SpecRow` entries above the full spec table — deliberately deferred to a follow-on pass so this redesign stays scoped to the two decisions above plus the structural fix in Section 4.6.
 
 Dark passages (hero, evening gallery, footer) invert: `--ink` background, `--mist` text, `--stone` at 40% for rules.
 
@@ -291,7 +298,9 @@ Motion budget, deliberately small:
 
 **Explicitly forbidden:** fade-and-slide-up on every section as it enters the viewport, hover-lift on every card, counters that tick up when scrolled into view, marquee text, parallax on more than the two elements named above. These are the generic default and this project doesn't need them.
 
-`@media (prefers-reduced-motion: reduce)`: all transitions to 1ms, parallax disabled, hero video replaced by its poster, contour pre-drawn, autoplaying gallery paused.
+**Amended, [2026 redesign] — one named, bounded exception:** the alternating media/text rows in Location (6.4), the villa (6.6) and pool options (6.7) each get a single one-time reveal as they cross the viewport — opacity 0→1 with a 24px horizontal offset resolving to 0, `--dur-slow` / `--ease-out`, fired once (`viewport: { once: true }`) and never replayed. This is still not "every section": the measure band, features, amenities, plans, payment and developer sections are unchanged and remain exactly as forbidden-list-compliant as before. Implemented via `components/layout/Reveal.tsx`, which no-ops under `prefers-reduced-motion` (rows render in their resting state immediately, same contract as everything else in this section).
+
+`@media (prefers-reduced-motion: reduce)`: all transitions to 1ms, parallax disabled, hero video replaced by its poster, contour pre-drawn, autoplaying gallery paused, the Location/villa/pool row reveal skipped entirely.
 
 ### 4.7 Art direction
 

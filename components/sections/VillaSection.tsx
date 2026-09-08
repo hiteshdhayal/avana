@@ -1,4 +1,5 @@
 import { FloorPlanViewer } from "@/components/villa/FloorPlanViewer";
+import { Reveal } from "@/components/layout/Reveal";
 import { Section, SectionInner } from "@/components/layout/Section";
 import { SpecTable } from "@/components/data/SpecTable";
 import { content } from "@/content/avana";
@@ -24,17 +25,25 @@ export function VillaSection() {
   return (
     <Section id="villa" background="mist" rail={{ label: "The villa" }}>
       <SectionInner>
+        {/* Zigzag rhythm (spec 4.1 amendment): the baseline row — media
+            left, text right — with location and pools alternating around
+            it. Unlike those two, column placement here is unchanged; only
+            the one-time reveal is new. */}
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6">
-            <FloorPlanViewer levels={levels} />
+            <Reveal from="left">
+              <FloorPlanViewer levels={levels} />
+            </Reveal>
           </div>
 
           <div className="lg:col-span-5 lg:col-start-8">
-            <h2 className="subdisplay text-step-3">{villa.headline}</h2>
-            {body && <p className="measure mt-6 text-body">{body}</p>}
-            <div className="mt-8">
-              <SpecTable rows={rows} />
-            </div>
+            <Reveal from="right">
+              <h2 className="subdisplay text-step-3">{villa.headline}</h2>
+              {body && <p className="measure mt-6 text-body">{body}</p>}
+              <div className="mt-8">
+                <SpecTable rows={rows} />
+              </div>
+            </Reveal>
           </div>
         </div>
       </SectionInner>

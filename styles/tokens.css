@@ -18,6 +18,9 @@
   --amber-ink: #4a2f06; /* text on amber */
   --brass: #a9884f; /* developer signature only */
   --alert: #a3402f; /* form errors */
+  --sage: #6e8f73; /* quiet structural accent (spec 4.2, amended). Icon strokes
+                       and section-transition marks only — never a CTA, never
+                       amber's job. Not yet consumed by any component. */
 
   /* 4.3 Type scale -------------------------------------------------------- */
   --step--1: 0.8125rem; /* caption 13px / 1.45 */

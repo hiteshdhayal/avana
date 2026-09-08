@@ -29,6 +29,7 @@
   --color-amber-ink: var(--amber-ink);
   --color-brass: var(--brass);
   --color-alert: var(--alert);
+  --color-sage: var(--sage);
 
   --font-display: var(--font-fraunces), "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Switzer", var(--font-grotesque), ui-sans-serif, system-ui, sans-serif;
@@ -221,6 +222,27 @@
     font-weight: 400;
     letter-spacing: -0.015em;
     line-height: 1.05;
+  }
+
+  /* Spec 4.6 amendment: the one named, bounded reveal exception, used only
+     by <Reveal> on the Location/villa/pool rows. A transition, not a
+     @keyframes animation, so the reduced-motion contract below (which
+     forces every transition to 1ms) neutralizes it automatically. */
+  .reveal {
+    opacity: 0;
+    transition:
+      opacity var(--dur-slow) var(--ease-out),
+      transform var(--dur-slow) var(--ease-out);
+  }
+  .reveal[data-reveal="left"] {
+    transform: translateX(-24px);
+  }
+  .reveal[data-reveal="right"] {
+    transform: translateX(24px);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

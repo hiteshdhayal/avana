@@ -1,14 +1,21 @@
 import { ContourRail } from "@/components/layout/ContourRail";
+import { Hero } from "@/components/hero/Hero";
+import { LocationSection } from "@/components/sections/LocationSection";
+import { MasterPlanSection } from "@/components/sections/MasterPlanSection";
+import { PrefillProvider } from "@/components/enquiry/PrefillProvider";
+import { MeasureBand } from "@/components/data/MeasureBand";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Section, SectionInner } from "@/components/layout/Section";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { StickyActions } from "@/components/layout/StickyActions";
 import { content } from "@/content/avana";
+import { resolveMedia } from "@/lib/media";
 import { siteChrome } from "@/lib/site";
 
 export default function Home() {
   const chrome = siteChrome();
+  const heroPoster = resolveMedia(content.hero.poster);
 
   return (
     <>
@@ -23,28 +30,24 @@ export default function Home() {
       />
       <ContourRail />
 
+      <PrefillProvider>
       <main id="main">
-        <Section id="top" background="ink" className="min-h-screen">
-          <SectionInner>
-            <h1 className="display text-step-5 pt-24">{content.hero.h1}</h1>
-          </SectionInner>
-        </Section>
+        <Hero
+          h1={content.hero.h1}
+          lead={content.hero.lead}
+          primaryCta={content.hero.primaryCta}
+          secondaryCta={content.hero.secondaryCta}
+          notes={content.hero.fieldNotes}
+          poster={heroPoster}
+          video={content.hero.video}
+          hasRender={heroPoster.available}
+        />
 
-        <Section id="location" background="mist" rail={{ label: "Location" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">
-              {content.location.headline}
-            </h2>
-          </SectionInner>
-        </Section>
+        <MeasureBand items={content.measureBand} />
 
-        <Section id="plan" background="ink" rail={{ label: "Master plan" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">
-              {content.masterPlan.headline}
-            </h2>
-          </SectionInner>
-        </Section>
+        <LocationSection />
+
+        <MasterPlanSection />
 
         <Section id="villa" background="mist" rail={{ label: "The villa" }}>
           <SectionInner>
@@ -100,6 +103,7 @@ export default function Home() {
           </SectionInner>
         </Section>
       </main>
+      </PrefillProvider>
 
       <Footer
         projectName={chrome.projectName}

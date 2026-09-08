@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useId, useState } from "react";
-import type { MediaRef } from "@/lib/media";
+import type { MediaRef } from "@/lib/media-types";
 
 /**
  * MahaRERA disclosure block.

@@ -63,6 +63,8 @@ export type Location = {
   mapPinVerified: boolean;
   headline: string;
   body: string;
+  /** The orientation claim, held separate so the guard can drop it whole. */
+  bodyOrientation?: string;
   orientationVerified: boolean;
   connectivity: ConnectivityRow[];
 };

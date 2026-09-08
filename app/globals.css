@@ -238,3 +238,88 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Hero load sequence — spec 6.2. One orchestrated page-load, 1.6s, once.
+   Nothing else on the page animates on load.
+
+   Every element's resting state is its *natural* state, and the keyframes run
+   backwards from it with `animation-fill-mode: backwards`. Without JavaScript,
+   or under reduced motion (where .hero-anim is never applied), the composed
+   hero is simply there — no content depends on an animation completing.
+   --------------------------------------------------------------------------- */
+
+@keyframes hero-rise {
+  from {
+    /* The type appears to rise from behind the horizon: a clip-path inset,
+       not a translate + fade. This is the one moment of theatre. */
+    clip-path: inset(100% 0 -10% 0);
+  }
+  to {
+    clip-path: inset(0 0 -10% 0);
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-draw-rule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-media {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-overlay {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: var(--hero-overlay-rest, 1);
+  }
+}
+
+.hero-anim .hero-media {
+  animation: hero-media var(--dur-cinematic) var(--ease-soft) 120ms backwards;
+}
+.hero-anim .hero-overlay-veil {
+  animation: hero-overlay var(--dur-cinematic) var(--ease-soft) 120ms backwards;
+}
+.hero-anim .hero-line-1 {
+  animation: hero-rise var(--dur-slow) var(--ease-out) 300ms backwards;
+}
+.hero-anim .hero-line-2 {
+  animation: hero-rise var(--dur-slow) var(--ease-out) 420ms backwards;
+}
+.hero-anim .hero-lead {
+  animation: hero-fade var(--dur-base) var(--ease-out) 700ms backwards;
+}
+.hero-anim .hero-actions {
+  animation: hero-fade var(--dur-base) var(--ease-out) 820ms backwards;
+}
+.hero-anim .hero-note {
+  animation: hero-fade var(--dur-base) var(--ease-out)
+    calc(900ms + var(--i, 0) * 60ms) backwards;
+}
+.hero-anim .hero-note-rule {
+  transform-origin: left center;
+  animation: hero-draw-rule 480ms var(--ease-out)
+    calc(900ms + var(--i, 0) * 60ms) backwards;
+}

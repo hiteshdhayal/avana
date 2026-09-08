@@ -41,7 +41,7 @@
     "mapPinLabel": "Crown Valley Residency",
     "mapPinVerified": false,
     "headline": "Karjat, where the plain runs out",
-    "body": "The site sits on a slope above Karjat Shindhol, in the Sahyadri foothills of Raigad. Waterfalls through the monsoon, the valley open to the west, and Karjat town's market and temple a few minutes down the road.",
+    "body": "The site sits on a slope above Karjat Shindhol, in the Sahyadri foothills of Raigad. Waterfalls through the monsoon, and Karjat town's market and temple a few minutes down the road.",
     "orientationVerified": false,
     "connectivity": [
       {
@@ -69,7 +69,9 @@
         "minutes": null,
         "verified": false
       }
-    ]
+    ],
+    "bodyOrientation": "The valley opens to the west, and the slope faces south.",
+    "_orientationNote": "Rendered only when orientationVerified is true. Spec 6.4: confirm orientation from the survey plan before publishing."
   },
   "hero": {
     "h1": "Eighteen villas, one hillside in Karjat",

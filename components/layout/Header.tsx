@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { RegBlock } from "./RegBlock";
 import { ButtonLink } from "@/components/ui/Button";
 import { useActiveSection } from "@/hooks/useActiveSection";
-import type { MediaRef } from "@/lib/media";
+import type { MediaRef } from "@/lib/media-types";
 
 const NAV = [
   { href: "#location", id: "location", label: "Location" },

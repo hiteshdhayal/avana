@@ -1,5 +1,10 @@
+import "server-only";
 import fs from "node:fs";
 import path from "node:path";
+
+import type { MediaRef } from "./media-types";
+
+export type { MediaRef };
 
 /**
  * Asset resolution.
@@ -14,11 +19,6 @@ import path from "node:path";
  * layout shift when the real render lands, and no chance of a placeholder
  * being mistaken for the product.
  */
-
-export type MediaRef = {
-  src: string | null;
-  available: boolean;
-};
 
 const cache = new Map<string, boolean>();
 

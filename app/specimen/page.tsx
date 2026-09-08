@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { Figure } from "@/components/media/Figure";
+import { resolveMedia } from "@/lib/media";
 import { Rule } from "@/components/ui/Rule";
 import { Section, SectionInner } from "@/components/layout/Section";
 
@@ -126,7 +127,7 @@ export default function Specimen() {
           <Rule className="my-10" />
           <div className="max-w-xl">
             <Figure
-              src="/media/valley-day.avif"
+              media={resolveMedia("/media/valley-day.avif")}
               alt="the valley at Karjat Shindhol"
               ratio="3:2"
               caption="Figure holds the layout box whether or not the render exists."

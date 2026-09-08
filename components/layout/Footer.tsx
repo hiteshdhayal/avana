@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { RegBlock } from "./RegBlock";
 import { Rule } from "@/components/ui/Rule";
-import type { MediaRef } from "@/lib/media";
+import type { MediaRef } from "@/lib/media-types";
 
 type Props = {
   projectName: string;

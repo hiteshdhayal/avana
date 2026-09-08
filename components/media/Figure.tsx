@@ -1,6 +1,5 @@
 import Image from "next/image";
-import type { MediaRef } from "@/lib/media";
-import { resolveMedia } from "@/lib/media";
+import type { MediaRef } from "@/lib/media-types";
 
 export type Ratio = "21:9" | "3:2" | "4:5" | "16:9" | "1:1" | "native";
 
@@ -14,7 +13,12 @@ const ratios: Record<Ratio, string> = {
 };
 
 type Props = {
-  src: string | null;
+  /**
+   * A ref resolved by `resolveMedia()` in a server component. Figure never
+   * resolves it itself: doing so would pull `node:fs` into any client
+   * component that renders a figure.
+   */
+  media: MediaRef;
   alt: string;
   /** Editorial caption, under the credit line. */
   caption?: string;
@@ -28,8 +32,6 @@ type Props = {
   priority?: boolean;
   sizes?: string;
   className?: string;
-  /** Pre-resolved ref, for client components that cannot touch the filesystem. */
-  media?: MediaRef;
 };
 
 /**
@@ -37,7 +39,7 @@ type Props = {
  * guarantees no render ever ships without its attribution.
  */
 export function Figure({
-  src,
+  media,
   alt,
   caption,
   credit = "Artist's impression",
@@ -45,9 +47,8 @@ export function Figure({
   priority = false,
   sizes = "(max-width: 900px) 100vw, 60vw",
   className = "",
-  media,
 }: Props) {
-  const ref = media ?? resolveMedia(src);
+  const ref = media;
   const aspect = ratios[ratio];
 
   return (

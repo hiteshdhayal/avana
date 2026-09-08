@@ -1,26 +1,25 @@
-import { ContourRail } from "@/components/layout/ContourRail";
+import { MeasureBand } from "@/components/data/MeasureBand";
+import { PrefillProvider } from "@/components/enquiry/PrefillProvider";
 import { Hero } from "@/components/hero/Hero";
-import { LocationSection } from "@/components/sections/LocationSection";
-import { MasterPlanSection } from "@/components/sections/MasterPlanSection";
+import { ContourRail } from "@/components/layout/ContourRail";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { StickyActions } from "@/components/layout/StickyActions";
 import { AmenitiesSection } from "@/components/sections/AmenitiesSection";
+import { DeveloperSection } from "@/components/sections/DeveloperSection";
+import { EnquirySection } from "@/components/sections/EnquirySection";
 import { EveningSection } from "@/components/sections/EveningSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
-import { DeveloperSection } from "@/components/sections/DeveloperSection";
+import { LocationSection } from "@/components/sections/LocationSection";
+import { MasterPlanSection } from "@/components/sections/MasterPlanSection";
 import { PaymentSection } from "@/components/sections/PaymentSection";
 import { PlansSection } from "@/components/sections/PlansSection";
 import { PoolsSection } from "@/components/sections/PoolsSection";
-import { PrefillProvider } from "@/components/enquiry/PrefillProvider";
 import { VillaSection } from "@/components/sections/VillaSection";
-import { MeasureBand } from "@/components/data/MeasureBand";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { Section, SectionInner } from "@/components/layout/Section";
-import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { StickyActions } from "@/components/layout/StickyActions";
 import { content } from "@/content/avana";
 import { resolveMedia } from "@/lib/media";
 import { siteChrome } from "@/lib/site";
-
 
 export default function Home() {
   const chrome = siteChrome();
@@ -77,11 +76,7 @@ export default function Home() {
 
         <DeveloperSection />
 
-        <Section id="enquire" background="ink" rail={{ label: "Enquire" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">{content.enquire.headline}</h2>
-          </SectionInner>
-        </Section>
+        <EnquirySection />
       </main>
       </PrefillProvider>
 

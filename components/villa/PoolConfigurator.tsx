@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { PoolScaleDrawing } from "./PoolScaleDrawing";
 import { Figure } from "@/components/media/Figure";
 import { usePrefill } from "@/components/enquiry/PrefillProvider";
@@ -19,13 +19,19 @@ export function PoolConfigurator({ options }: { options: Option[] }) {
   const { setPool } = usePrefill();
   const selected = options[index];
 
-  useEffect(() => {
-    setPool(selected.id);
-  }, [selected.id, setPool]);
+  // Written to the shared prefill only on an actual selection — never on
+  // mount. An effect keyed on `selected.id` would fire the moment this
+  // component renders (option A is the initial `index`), silently writing
+  // "pool A" onto every enquiry regardless of whether the visitor ever
+  // touched the configurator (spec 6.7 only asks to carry an explicit choice).
+  const select = (i: number) => {
+    setIndex(i);
+    setPool(options[i].id);
+  };
 
   const move = (next: number) => {
     const clamped = (next + options.length) % options.length;
-    setIndex(clamped);
+    select(clamped);
     refs.current[clamped]?.focus();
   };
 
@@ -53,7 +59,7 @@ export function PoolConfigurator({ options }: { options: Option[] }) {
                 role="radio"
                 aria-checked={checked}
                 tabIndex={checked ? 0 : -1}
-                onClick={() => setIndex(i)}
+                onClick={() => select(i)}
                 onKeyDown={(event) => {
                   if (event.key === "ArrowDown" || event.key === "ArrowRight") {
                     event.preventDefault();

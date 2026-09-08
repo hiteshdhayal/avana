@@ -47,8 +47,22 @@
   /* The contour rail reserves this much of the viewport at >= 1200px. */
   --rail-w: 96px;
 
-  /* Sticky header height, used for scroll-margin on every anchor. */
-  --header-h: 64px;
+  /* Sticky header height, used for scroll-margin on every anchor. Two rows
+     below sm, where the reg block wraps to its own line. */
+  --header-h: 118px;
+
+  /* ---------------------------------------------------------------------
+     COMPLIANCE CONSTRAINT — MahaRERA Order 46C/2025 (spec 3.3).
+     The MahaRERA registration number must be set at a font size equal to or
+     larger than the LARGEST font used for the project's contact details.
+     Every contact detail on this page (phone, email, address, WhatsApp, the
+     sticky action bar) is rendered at or below --contact-type-max, and
+     <RegBlock> renders the number *at* it. Raising a contact detail above
+     this value without raising this value is a compliance failure, not a
+     style choice. tests/compliance.spec.ts measures both and fails if the
+     relationship breaks.
+     --------------------------------------------------------------------- */
+  --contact-type-max: 1.25rem; /* = --step-1, 20px */
 
   /* 4.6 Motion ------------------------------------------------------------ */
   --dur-fast: 180ms;

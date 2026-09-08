@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "fonts:build": "./scripts/build-fonts.sh",
-    "audit:content": "node --experimental-strip-types scripts/audit-content.ts"
+    "audit:content": "node --experimental-strip-types scripts/audit-content.ts",
+    "test": "playwright test"
   },
   "dependencies": {
     "@googleapis/sheets": "^14.0.0",

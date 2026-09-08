@@ -2,7 +2,15 @@ import { ContourRail } from "@/components/layout/ContourRail";
 import { Hero } from "@/components/hero/Hero";
 import { LocationSection } from "@/components/sections/LocationSection";
 import { MasterPlanSection } from "@/components/sections/MasterPlanSection";
+import { AmenitiesSection } from "@/components/sections/AmenitiesSection";
+import { EveningSection } from "@/components/sections/EveningSection";
+import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { DeveloperSection } from "@/components/sections/DeveloperSection";
+import { PaymentSection } from "@/components/sections/PaymentSection";
+import { PlansSection } from "@/components/sections/PlansSection";
+import { PoolsSection } from "@/components/sections/PoolsSection";
 import { PrefillProvider } from "@/components/enquiry/PrefillProvider";
+import { VillaSection } from "@/components/sections/VillaSection";
 import { MeasureBand } from "@/components/data/MeasureBand";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -12,6 +20,7 @@ import { StickyActions } from "@/components/layout/StickyActions";
 import { content } from "@/content/avana";
 import { resolveMedia } from "@/lib/media";
 import { siteChrome } from "@/lib/site";
+
 
 export default function Home() {
   const chrome = siteChrome();
@@ -49,53 +58,24 @@ export default function Home() {
 
         <MasterPlanSection />
 
-        <Section id="villa" background="mist" rail={{ label: "The villa" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">{content.villa.headline}</h2>
-          </SectionInner>
-        </Section>
+        <VillaSection />
 
-        <Section id="pools" background="mist-hi" rail={{ label: "Pools" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">{content.pools.headline}</h2>
-          </SectionInner>
-        </Section>
+        <PoolsSection />
 
-        <Section id="features" background="mist" rail={{ label: "Inside" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">Inside</h2>
-          </SectionInner>
-        </Section>
+        <FeaturesSection />
 
-        <Section id="amenities" background="terrace" rail={{ label: "Amenities" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">
-              {content.amenities.headline}
-            </h2>
-          </SectionInner>
-        </Section>
+        <AmenitiesSection />
 
-        <Section id="plans" background="mist" rail={{ label: "Plans" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">{content.plans.headline}</h2>
-          </SectionInner>
-        </Section>
+        <EveningSection
+          passage={content.evening.passage}
+          media={resolveMedia(content.evening.image)}
+        />
 
-        <Section id="payment" background="mist-hi" rail={{ label: "Payment" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">
-              {content.payment.headline}
-            </h2>
-          </SectionInner>
-        </Section>
+        <PlansSection />
 
-        <Section id="developer" background="mist" rail={{ label: "Developer" }}>
-          <SectionInner>
-            <h2 className="subdisplay text-step-3">
-              {content.developer.headline}
-            </h2>
-          </SectionInner>
-        </Section>
+        <PaymentSection />
+
+        <DeveloperSection />
 
         <Section id="enquire" background="ink" rail={{ label: "Enquire" }}>
           <SectionInner>

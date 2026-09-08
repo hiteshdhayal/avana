@@ -323,3 +323,14 @@
   animation: hero-draw-rule 480ms var(--ease-out)
     calc(900ms + var(--i, 0) * 60ms) backwards;
 }
+
+@layer components {
+  /* Grid track count follows the actual number of rendered plans (spec 6.11) —
+     see PlanColumns. Only applied at lg, matching the single-column mobile
+     layout the component already sets via Tailwind. */
+  @media (min-width: 1200px) {
+    .plan-columns {
+      grid-template-columns: repeat(var(--plan-cols, 3), minmax(0, 1fr));
+    }
+  }
+}
